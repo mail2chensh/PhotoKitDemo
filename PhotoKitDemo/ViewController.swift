@@ -20,6 +20,12 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func buttonDidTouch(_ sender: UIButton) {
+        
+        let albumListVC : YTAlbumListTableViewController = YTAlbumListTableViewController()
+        self.navigationController?.pushViewController(albumListVC, animated: true)
+        
+    }
 
 }
 
