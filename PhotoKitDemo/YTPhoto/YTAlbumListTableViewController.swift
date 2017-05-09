@@ -12,13 +12,18 @@ import Photos
 class YTAlbumListTableViewController: UITableViewController {
     
     
-    var dataArray: [PHCollection] = []
+    var dataArray: [(PHCollection, Int)] = []
     
     var smartAlbums: PHFetchResult<PHAssetCollection>!
     var topLevelUserConllections: PHFetchResult<PHCollection>!
     
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationItem.title = "相簿"
         
         self.tableView.register(UINib.init(nibName: "YTAlbumListTableViewCell", bundle: nil), forCellReuseIdentifier: "YTAlbumListTableViewCell")
         self.tableView.estimatedRowHeight = 80
@@ -42,11 +47,17 @@ class YTAlbumListTableViewController: UITableViewController {
         
         for index in 0..<smartAlbums.count {
             let collection = smartAlbums.object(at: index)
-            self.dataArray.append(collection)
+            let result: PHFetchResult<PHAsset> = PHAsset.fetchAssets(in: collection, options: nil)
+            if result.count > 0 {
+                self.dataArray.append((collection, result.count))
+            }
         }
         for index in 0..<topLevelUserConllections.count {
             let collection = topLevelUserConllections.object(at: index)
-            self.dataArray.append(collection)
+            let result: PHFetchResult<PHAsset> = PHAsset.fetchAssets(in: collection as! PHAssetCollection, options: nil)
+            if result.count > 0 {
+                self.dataArray.append((collection, result.count))
+            }
         }
         
         self.tableView.reloadData()
@@ -69,9 +80,10 @@ class YTAlbumListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: YTAlbumListTableViewCell = tableView.dequeueReusableCell(withIdentifier: "YTAlbumListTableViewCell", for: indexPath) as! YTAlbumListTableViewCell
 
-        let collection = self.dataArray[indexPath.row]
+        let (collection, count) = self.dataArray[indexPath.row]
         cell.nameLabel.text = self.transformAlbumTitle(collection.localizedTitle!)
-
+        cell.countLabel.text = String(count)
+        
         return cell
     }
     
