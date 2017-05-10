@@ -20,6 +20,17 @@ class YTAssetGridViewController: UIViewController, UICollectionViewDataSource, U
     var fetchResult: PHFetchResult<PHAsset>!
     var assetCollection: PHAssetCollection!
     
+    fileprivate var thumbnailSize: CGSize!
+    
+    
+    init(paramCollection: PHAssetCollection) {
+        super.init(nibName: "YTAssetGridViewController", bundle: nil)
+        self.assetCollection = paramCollection
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     
     override func viewDidLoad() {
@@ -34,6 +45,12 @@ class YTAssetGridViewController: UIViewController, UICollectionViewDataSource, U
         collectionView .register(UINib.init(nibName: "YTAssetGridCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "YTAssetGridCollectionViewCell")
         
         //
+        let scale = UIScreen.main.scale
+        thumbnailSize = CGSize(width: itemSize * scale, height: itemSize * scale)
+        
+        //
+        fetchResult = PHAsset.fetchAssets(in: assetCollection, options: nil)
+        
         
     }
 
@@ -42,15 +59,33 @@ class YTAssetGridViewController: UIViewController, UICollectionViewDataSource, U
         // Dispose of any resources that can be recreated.
     }
     
+    
+    // =====================================
     // MARK: UICollection Delegate
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "YTAssetGridCollectionViewCell", for: indexPath)
-        
-        return cell
-    }
+    // =====================================
+    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return fetchResult.count
     }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell: YTAssetGridCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "YTAssetGridCollectionViewCell", for: indexPath) as! YTAssetGridCollectionViewCell
+        
+        let asset = fetchResult.object(at: indexPath.item)
+        
+        cell.representedAssetIdentifier = asset.localIdentifier
+        YTCachingImageManager.sharedInstance.cacheImageManager.requestImage(for: asset, targetSize: thumbnailSize, contentMode: .aspectFill, options: nil) { (image, _) in
+            if cell.representedAssetIdentifier == asset.localIdentifier {
+                cell.thumbnailImage = image    
+            }
+            
+        }
+        
+        return cell
+    }
+    
+    
 
 }

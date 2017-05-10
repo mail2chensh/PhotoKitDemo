@@ -90,7 +90,9 @@ class YTAlbumListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        
+        let (collection, _) = self.dataArray[indexPath.row]
+        let gridVC: YTAssetGridViewController = YTAssetGridViewController.init(paramCollection: collection as! PHAssetCollection)
+        self.navigationController?.pushViewController(gridVC, animated: true)
         
     }
     
