@@ -13,7 +13,6 @@
 		5BB16D6D1EC0A20E00B538FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BB16D6C1EC0A20E00B538FD /* Assets.xcassets */; };
 		5BB16D701EC0A20E00B538FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BB16D6E1EC0A20E00B538FD /* LaunchScreen.storyboard */; };
 		5BB16D7A1EC0A24700B538FD /* YTAlbumListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB16D781EC0A24700B538FD /* YTAlbumListTableViewController.swift */; };
-		5BB16D7B1EC0A24700B538FD /* YTAlbumListTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BB16D791EC0A24700B538FD /* YTAlbumListTableViewController.xib */; };
 		5BB16D7E1EC0A26700B538FD /* YTAlbumListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB16D7C1EC0A26700B538FD /* YTAlbumListTableViewCell.swift */; };
 		5BB16D7F1EC0A26700B538FD /* YTAlbumListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BB16D7D1EC0A26700B538FD /* YTAlbumListTableViewCell.xib */; };
 		5BB16D811EC200B800B538FD /* YTCacheImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB16D801EC200B800B538FD /* YTCacheImageManager.swift */; };
@@ -21,6 +20,7 @@
 		D7295F441EC1BDB5007FC5EF /* YTAssetGridViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7295F421EC1BDB5007FC5EF /* YTAssetGridViewController.xib */; };
 		D7295F4E1EC1C38D007FC5EF /* YTAssetGridCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7295F4C1EC1C38D007FC5EF /* YTAssetGridCollectionViewCell.swift */; };
 		D7295F4F1EC1C38D007FC5EF /* YTAssetGridCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7295F4D1EC1C38D007FC5EF /* YTAssetGridCollectionViewCell.xib */; };
+		D7820E971EC2F426007BFB14 /* YTAlbum.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7820E961EC2F426007BFB14 /* YTAlbum.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,7 +32,6 @@
 		5BB16D6F1EC0A20E00B538FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5BB16D711EC0A20E00B538FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5BB16D781EC0A24700B538FD /* YTAlbumListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTAlbumListTableViewController.swift; sourceTree = "<group>"; };
-		5BB16D791EC0A24700B538FD /* YTAlbumListTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YTAlbumListTableViewController.xib; sourceTree = "<group>"; };
 		5BB16D7C1EC0A26700B538FD /* YTAlbumListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTAlbumListTableViewCell.swift; sourceTree = "<group>"; };
 		5BB16D7D1EC0A26700B538FD /* YTAlbumListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YTAlbumListTableViewCell.xib; sourceTree = "<group>"; };
 		5BB16D801EC200B800B538FD /* YTCacheImageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTCacheImageManager.swift; sourceTree = "<group>"; };
@@ -40,6 +39,7 @@
 		D7295F421EC1BDB5007FC5EF /* YTAssetGridViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YTAssetGridViewController.xib; sourceTree = "<group>"; };
 		D7295F4C1EC1C38D007FC5EF /* YTAssetGridCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTAssetGridCollectionViewCell.swift; sourceTree = "<group>"; };
 		D7295F4D1EC1C38D007FC5EF /* YTAssetGridCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YTAssetGridCollectionViewCell.xib; sourceTree = "<group>"; };
+		D7820E961EC2F426007BFB14 /* YTAlbum.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = YTAlbum.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +87,6 @@
 			isa = PBXGroup;
 			children = (
 				5BB16D781EC0A24700B538FD /* YTAlbumListTableViewController.swift */,
-				5BB16D791EC0A24700B538FD /* YTAlbumListTableViewController.xib */,
 				5BB16D7C1EC0A26700B538FD /* YTAlbumListTableViewCell.swift */,
 				5BB16D7D1EC0A26700B538FD /* YTAlbumListTableViewCell.xib */,
 				D7295F411EC1BDB5007FC5EF /* YTAssetGridViewController.swift */,
@@ -95,6 +94,7 @@
 				D7295F4C1EC1C38D007FC5EF /* YTAssetGridCollectionViewCell.swift */,
 				D7295F4D1EC1C38D007FC5EF /* YTAssetGridCollectionViewCell.xib */,
 				5BB16D801EC200B800B538FD /* YTCacheImageManager.swift */,
+				D7820E961EC2F426007BFB14 /* YTAlbum.xcassets */,
 			);
 			path = YTPhoto;
 			sourceTree = "<group>";
@@ -161,11 +161,11 @@
 			files = (
 				D7295F4F1EC1C38D007FC5EF /* YTAssetGridCollectionViewCell.xib in Resources */,
 				5BB16D7F1EC0A26700B538FD /* YTAlbumListTableViewCell.xib in Resources */,
-				5BB16D7B1EC0A24700B538FD /* YTAlbumListTableViewController.xib in Resources */,
 				5BB16D701EC0A20E00B538FD /* LaunchScreen.storyboard in Resources */,
 				5BB16D6D1EC0A20E00B538FD /* Assets.xcassets in Resources */,
 				D7295F441EC1BDB5007FC5EF /* YTAssetGridViewController.xib in Resources */,
 				5BB16D6B1EC0A20E00B538FD /* Main.storyboard in Resources */,
+				D7820E971EC2F426007BFB14 /* YTAlbum.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

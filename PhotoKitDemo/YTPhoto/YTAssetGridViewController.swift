@@ -10,7 +10,7 @@ import UIKit
 import Photos
 
 
-class YTAssetGridViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class YTAssetGridViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, YTAssetGridCollectionViewCellDelegate {
 
     let itemSize: CGFloat = UIScreen.main.bounds.width / 4
     
@@ -23,22 +23,26 @@ class YTAssetGridViewController: UIViewController, UICollectionViewDataSource, U
     fileprivate var thumbnailSize: CGSize!
     
     
+    
     init(paramCollection: PHAssetCollection) {
         super.init(nibName: "YTAssetGridViewController", bundle: nil)
         self.assetCollection = paramCollection
     }
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
         //
         flowLayout = UICollectionViewFlowLayout.init()
         flowLayout.itemSize = CGSize(width: itemSize, height: itemSize)
+        flowLayout.minimumLineSpacing = 0
+        flowLayout.minimumInteritemSpacing = 0
         collectionView.collectionViewLayout = flowLayout
         
         //
@@ -52,6 +56,12 @@ class YTAssetGridViewController: UIViewController, UICollectionViewDataSource, U
         fetchResult = PHAsset.fetchAssets(in: assetCollection, options: nil)
         
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //
+        self.navigationController?.isToolbarHidden = false
     }
 
     override func didReceiveMemoryWarning() {
@@ -72,6 +82,8 @@ class YTAssetGridViewController: UIViewController, UICollectionViewDataSource, U
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: YTAssetGridCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "YTAssetGridCollectionViewCell", for: indexPath) as! YTAssetGridCollectionViewCell
+        cell.indexPath = indexPath
+        cell.cellDelegate = self
         
         let asset = fetchResult.object(at: indexPath.item)
         
@@ -86,6 +98,27 @@ class YTAssetGridViewController: UIViewController, UICollectionViewDataSource, U
         return cell
     }
     
-    
+    // =====================================
+    // MARK: Cell Delegate
+    // =====================================
 
+    func assetGridCollectionViewCellDidSelected(_ cell: YTAssetGridCollectionViewCell, isSelected: Bool) {
+        
+        let asset = fetchResult.object(at: cell.indexPath.item)
+        
+        let options: PHImageRequestOptions = PHImageRequestOptions.init()
+        options.isNetworkAccessAllowed = false
+        
+        YTCachingImageManager.sharedInstance.cacheImageManager.requestImage(for: asset, targetSize: PHImageManagerMaximumSize, contentMode: .default, options: options) { (image, infoDict) in
+            // 排除取消，错误，低清图三种情况，即已经获取到了高清图时，把这张高清图缓存到 _originImage 中
+            
+            let downloadFinished: Bool = infoDict![PHImageCancelledKey] == nil && infoDict![PHImageErrorKey] == nil && infoDict![PHImageResultIsDegradedKey] == nil
+            if downloadFinished {
+                
+            }
+        }
+        
+    }
+    
+    
 }

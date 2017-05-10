@@ -15,6 +15,10 @@ class YTCachingImageManager: NSObject {
     
     var cacheImageManager: PHCachingImageManager!
     
+    var maxSelectedCount: Int = 1 // 选择照片数量
+    
+    var selectedArray: [UIImage] = []
+    
     override init() {
         cacheImageManager = PHCachingImageManager()
     }

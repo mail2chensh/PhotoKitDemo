@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -18,22 +18,37 @@
                 <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qSq-PA-snB">
-                        <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qSq-PA-snB">
+                        <rect key="frame" x="1" y="1" width="78" height="78"/>
                     </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8p3-ol-ep9">
+                        <rect key="frame" x="55" y="3" width="22" height="22"/>
+                        <state key="normal" image="unchoose"/>
+                        <state key="selected" image="choose"/>
+                        <connections>
+                            <action selector="selectButtonDidTouch:" destination="gTV-IL-0wX" eventType="touchUpInside" id="Mi8-Sb-hO2"/>
+                        </connections>
+                    </button>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="qSq-PA-snB" secondAttribute="bottom" id="HuM-Yd-04d"/>
-                <constraint firstItem="qSq-PA-snB" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="IAS-Lz-CWD"/>
-                <constraint firstItem="qSq-PA-snB" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="VOB-my-7Qh"/>
-                <constraint firstAttribute="trailing" secondItem="qSq-PA-snB" secondAttribute="trailing" id="w9y-wM-to4"/>
+                <constraint firstAttribute="bottom" secondItem="qSq-PA-snB" secondAttribute="bottom" constant="1" id="HuM-Yd-04d"/>
+                <constraint firstItem="qSq-PA-snB" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="1" id="IAS-Lz-CWD"/>
+                <constraint firstItem="qSq-PA-snB" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="1" id="VOB-my-7Qh"/>
+                <constraint firstItem="8p3-ol-ep9" firstAttribute="top" secondItem="qSq-PA-snB" secondAttribute="top" constant="2" id="ngQ-9V-hwN"/>
+                <constraint firstAttribute="trailing" secondItem="qSq-PA-snB" secondAttribute="trailing" constant="1" id="w9y-wM-to4"/>
+                <constraint firstItem="8p3-ol-ep9" firstAttribute="trailing" secondItem="qSq-PA-snB" secondAttribute="trailing" constant="-2" id="wYM-0R-ZDt"/>
             </constraints>
             <size key="customSize" width="137" height="120"/>
             <connections>
                 <outlet property="imageView" destination="qSq-PA-snB" id="Whh-eu-fwz"/>
+                <outlet property="selectButton" destination="8p3-ol-ep9" id="0Ay-QQ-G7o"/>
             </connections>
             <point key="canvasLocation" x="-98" y="-77"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="choose" width="22" height="22"/>
+        <image name="unchoose" width="22" height="22"/>
+    </resources>
 </document>
