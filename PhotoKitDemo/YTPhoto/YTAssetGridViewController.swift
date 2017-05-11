@@ -98,11 +98,17 @@ class YTAssetGridViewController: UIViewController, UICollectionViewDataSource, U
         return cell
     }
     
+    
     // =====================================
     // MARK: Cell Delegate
     // =====================================
 
     func assetGridCollectionViewCellDidSelected(_ cell: YTAssetGridCollectionViewCell, isSelected: Bool) {
+        
+        if !isSelected {
+            YTCachingImageManager.sharedInstance.removeImage(cell.representedAssetIdentifier)
+            return
+        }
         
         let asset = fetchResult.object(at: cell.indexPath.item)
         
@@ -111,10 +117,11 @@ class YTAssetGridViewController: UIViewController, UICollectionViewDataSource, U
         
         YTCachingImageManager.sharedInstance.cacheImageManager.requestImage(for: asset, targetSize: PHImageManagerMaximumSize, contentMode: .default, options: options) { (image, infoDict) in
             // 排除取消，错误，低清图三种情况，即已经获取到了高清图时，把这张高清图缓存到 _originImage 中
-            
-            let downloadFinished: Bool = infoDict![PHImageCancelledKey] == nil && infoDict![PHImageErrorKey] == nil && infoDict![PHImageResultIsDegradedKey] == nil
+            let downloadFinished: Bool = infoDict![PHImageCancelledKey] == nil && infoDict![PHImageErrorKey] == nil
             if downloadFinished {
-                
+                if image != nil {
+                    YTCachingImageManager.sharedInstance.selectedArray.append((cell.representedAssetIdentifier, image!))
+                }
             }
         }
         
