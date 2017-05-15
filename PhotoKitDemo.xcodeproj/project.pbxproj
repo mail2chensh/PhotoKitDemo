@@ -16,6 +16,8 @@
 		5BB16D7E1EC0A26700B538FD /* YTAlbumListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB16D7C1EC0A26700B538FD /* YTAlbumListTableViewCell.swift */; };
 		5BB16D7F1EC0A26700B538FD /* YTAlbumListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BB16D7D1EC0A26700B538FD /* YTAlbumListTableViewCell.xib */; };
 		5BB16D811EC200B800B538FD /* YTCachingImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB16D801EC200B800B538FD /* YTCachingImageManager.swift */; };
+		5BB16D851EC8575E00B538FD /* YTPhotoPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB16D841EC8575E00B538FD /* YTPhotoPickerView.swift */; };
+		5BB16D871EC8594400B538FD /* YTPhotoPickerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB16D861EC8594400B538FD /* YTPhotoPickerItem.swift */; };
 		D7295F431EC1BDB5007FC5EF /* YTAssetGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7295F411EC1BDB5007FC5EF /* YTAssetGridViewController.swift */; };
 		D7295F441EC1BDB5007FC5EF /* YTAssetGridViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7295F421EC1BDB5007FC5EF /* YTAssetGridViewController.xib */; };
 		D7295F4E1EC1C38D007FC5EF /* YTAssetGridCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7295F4C1EC1C38D007FC5EF /* YTAssetGridCollectionViewCell.swift */; };
@@ -35,6 +37,8 @@
 		5BB16D7C1EC0A26700B538FD /* YTAlbumListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTAlbumListTableViewCell.swift; sourceTree = "<group>"; };
 		5BB16D7D1EC0A26700B538FD /* YTAlbumListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YTAlbumListTableViewCell.xib; sourceTree = "<group>"; };
 		5BB16D801EC200B800B538FD /* YTCachingImageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTCachingImageManager.swift; sourceTree = "<group>"; };
+		5BB16D841EC8575E00B538FD /* YTPhotoPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTPhotoPickerView.swift; sourceTree = "<group>"; };
+		5BB16D861EC8594400B538FD /* YTPhotoPickerItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTPhotoPickerItem.swift; sourceTree = "<group>"; };
 		D7295F411EC1BDB5007FC5EF /* YTAssetGridViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTAssetGridViewController.swift; sourceTree = "<group>"; };
 		D7295F421EC1BDB5007FC5EF /* YTAssetGridViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YTAssetGridViewController.xib; sourceTree = "<group>"; };
 		D7295F4C1EC1C38D007FC5EF /* YTAssetGridCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTAssetGridCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -72,6 +76,7 @@
 		5BB16D641EC0A20E00B538FD /* PhotoKitDemo */ = {
 			isa = PBXGroup;
 			children = (
+				5BB16D831EC8572B00B538FD /* YTPhotoPickerView */,
 				5BB16D771EC0A23000B538FD /* YTPhoto */,
 				5BB16D651EC0A20E00B538FD /* AppDelegate.swift */,
 				5BB16D671EC0A20E00B538FD /* ViewController.swift */,
@@ -97,6 +102,15 @@
 				D7820E961EC2F426007BFB14 /* YTAlbum.xcassets */,
 			);
 			path = YTPhoto;
+			sourceTree = "<group>";
+		};
+		5BB16D831EC8572B00B538FD /* YTPhotoPickerView */ = {
+			isa = PBXGroup;
+			children = (
+				5BB16D841EC8575E00B538FD /* YTPhotoPickerView.swift */,
+				5BB16D861EC8594400B538FD /* YTPhotoPickerItem.swift */,
+			);
+			path = YTPhotoPickerView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,8 +190,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BB16D871EC8594400B538FD /* YTPhotoPickerItem.swift in Sources */,
 				5BB16D811EC200B800B538FD /* YTCachingImageManager.swift in Sources */,
 				5BB16D681EC0A20E00B538FD /* ViewController.swift in Sources */,
+				5BB16D851EC8575E00B538FD /* YTPhotoPickerView.swift in Sources */,
 				5BB16D661EC0A20E00B538FD /* AppDelegate.swift in Sources */,
 				D7295F4E1EC1C38D007FC5EF /* YTAssetGridCollectionViewCell.swift in Sources */,
 				5BB16D7E1EC0A26700B538FD /* YTAlbumListTableViewCell.swift in Sources */,
