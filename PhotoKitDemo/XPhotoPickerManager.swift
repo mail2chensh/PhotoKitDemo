@@ -152,9 +152,9 @@ class XPhotoPickerManger {
         var isExist: Bool = false
         let assets = self.assetsInAlbum[index!]
         for asset in assets {
-            if asset.mediaType != .image {
-                continue
-            }
+//            if asset.mediaType != .image {
+//                continue
+//            }
             //
             isExist = true
             //
