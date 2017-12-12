@@ -2,11 +2,12 @@
 //  AppDelegate.swift
 //  PhotoKitDemo
 //
-//  Created by Chensh on 2017/5/8.
-//  Copyright © 2017年 Chensh. All rights reserved.
+//  Created by dev on 2017/12/12.
+//  Copyright © 2017年 iAskDoc Technology. All rights reserved.
 //
 
 import UIKit
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,12 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
-        let albumListVC: YTAlbumListTableViewController = YTAlbumListTableViewController()
-        let navController: UINavigationController = UINavigationController.init(rootViewController: albumListVC)
-        window?.rootViewController = navController
-        window?.makeKeyAndVisible()
-        
         return true
     }
 

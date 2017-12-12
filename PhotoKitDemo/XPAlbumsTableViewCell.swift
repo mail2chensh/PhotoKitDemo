@@ -1,19 +1,19 @@
 //
-//  YTAlbumListTableViewCell.swift
+//  XPAlbumsTableViewCell.swift
 //  PhotoKitDemo
 //
-//  Created by Chensh on 2017/5/8.
-//  Copyright © 2017年 Chensh. All rights reserved.
+//  Created by dev on 2017/12/12.
+//  Copyright © 2017年 iAskDoc Technology. All rights reserved.
 //
 
 import UIKit
 
-class YTAlbumListTableViewCell: UITableViewCell {
-
+class XPAlbumsTableViewCell: UITableViewCell {
+    
     
     @IBOutlet weak var iconImageView: UIImageView!
     
-    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
     
     @IBOutlet weak var countLabel: UILabel!
     

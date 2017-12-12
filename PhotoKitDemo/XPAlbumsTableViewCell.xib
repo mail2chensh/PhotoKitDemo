@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="315" id="KGk-i7-Jjw" customClass="XPAlbumsTableViewCell" customModule="PhotoKitDemo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="395" height="315"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="395" height="314.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aEY-5p-aGU">
+                        <rect key="frame" x="15" y="122.5" width="70" height="70"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="70" id="KAj-Zw-JNB"/>
+                            <constraint firstAttribute="height" constant="70" id="OhX-Ai-Fek"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="相册" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UV1-cm-iSd">
+                        <rect key="frame" x="100" y="138" width="33" height="19.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <nil key="textColor"/>
+                        <color key="highlightedColor" red="0.16078431369999999" green="0.16078431369999999" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sgR-GU-fij">
+                        <rect key="frame" x="100" y="162.5" width="8.5" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <color key="highlightedColor" red="0.16078431369999999" green="0.16078431369999999" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                    </label>
+                    <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e2C-Ii-Y2Q">
+                        <rect key="frame" x="15" y="314" width="380" height="0.5"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="0.5" id="YZc-2s-GVP"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="sgR-GU-fij" firstAttribute="top" secondItem="UV1-cm-iSd" secondAttribute="bottom" constant="5" id="2Zp-NP-gXh"/>
+                    <constraint firstItem="aEY-5p-aGU" firstAttribute="top" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="8S2-R5-Q54"/>
+                    <constraint firstAttribute="trailing" secondItem="e2C-Ii-Y2Q" secondAttribute="trailing" id="Cto-KD-8bi"/>
+                    <constraint firstItem="e2C-Ii-Y2Q" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="F2X-hh-w0m"/>
+                    <constraint firstItem="UV1-cm-iSd" firstAttribute="centerY" secondItem="aEY-5p-aGU" secondAttribute="centerY" constant="-10" id="Kng-FZ-BhY"/>
+                    <constraint firstItem="sgR-GU-fij" firstAttribute="leading" secondItem="UV1-cm-iSd" secondAttribute="leading" id="MOx-9S-jOs"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="aEY-5p-aGU" secondAttribute="bottom" constant="10" id="Phu-em-SEH"/>
+                    <constraint firstItem="aEY-5p-aGU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="cqr-78-owt"/>
+                    <constraint firstAttribute="bottom" secondItem="e2C-Ii-Y2Q" secondAttribute="bottom" id="iHG-JI-9qi"/>
+                    <constraint firstItem="UV1-cm-iSd" firstAttribute="leading" secondItem="aEY-5p-aGU" secondAttribute="trailing" constant="15" id="s3k-Ez-V6B"/>
+                    <constraint firstItem="aEY-5p-aGU" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="xsK-8h-dmN"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="countLabel" destination="sgR-GU-fij" id="GhM-t2-KMG"/>
+                <outlet property="iconImageView" destination="aEY-5p-aGU" id="A3E-XC-ooG"/>
+                <outlet property="titleLabel" destination="UV1-cm-iSd" id="fdp-DC-OVk"/>
+            </connections>
+            <point key="canvasLocation" x="-155" y="-214"/>
+        </tableViewCell>
+    </objects>
+</document>
