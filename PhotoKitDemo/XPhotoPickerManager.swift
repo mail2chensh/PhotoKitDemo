@@ -55,18 +55,19 @@ class XPhotoPickerManger {
     // MARK:
     // =================================
     
-    var hiddenZeroCountAlbums: Bool = true // 是否需要隐藏资源为0的相册
+    var CacheImageSize: CGSize = CGSize(width: 80, height: 80)
+    var PreviewImageSize: CGSize = CGSize(width: 150, height: 150)
+    var ScreenImageSize: CGSize = UIScreen.main.bounds.size
     
-    var mediaType: PHAssetMediaType = .image //
     
     private var allAlbums: [PHAssetCollection] = []
     private var allAssetsInAlbum: [[PHAsset]] = []
-    
     var albums: [PHAssetCollection] = []
     var assetsInAlbum: [[PHAsset]] = []
     
-    var CacheImageSize: CGSize = CGSize(width: 80, height: 80)
-    
+    var hiddenZeroCountAlbums: Bool = true // 是否需要隐藏资源为0的相册
+    var maxSelectedCount: Int = 1 // 最大的选择图片数
+    var currentSelectedIndex: Int = 0 // 当前选中的图片资源
     
     // =================================
     // MARK:
@@ -152,9 +153,6 @@ class XPhotoPickerManger {
         var isExist: Bool = false
         let assets = self.assetsInAlbum[index!]
         for asset in assets {
-//            if asset.mediaType != .image {
-//                continue
-//            }
             //
             isExist = true
             //
@@ -194,6 +192,53 @@ class XPhotoPickerManger {
         }
     }
     
+    // =================================
+    // MARK:
+    // =================================
+    
+    // 返回当前选中的资源集合
+    
+    func currentSelectedAssetsInAlbum() -> [PHAsset] {
+        if currentSelectedIndex < 0 || currentSelectedIndex >= self.assetsInAlbum.count {
+            return []
+        }
+        return self.assetsInAlbum[self.currentSelectedIndex]
+    }
+    
+    // 返回当前选中的相册名
+    func currentSelectedAlbumTitle() -> String {
+        if currentSelectedIndex < 0 || currentSelectedIndex >= self.albums.count {
+            return ""
+        }
+        let album = self.albums[currentSelectedIndex]
+        if let title: String = album.localizedTitle {
+            return title
+        }
+        return ""
+    }
+    
+    // =================================
+    // MARK:
+    // =================================
+    
+    
+    // 获取资源的预览图片
+    func getPhoto(asset: PHAsset, targetSize: CGSize, completion: @escaping XPhotoPickerGetImageCompletion) {
+        //
+        let requestOptions: PHImageRequestOptions = PHImageRequestOptions.init()
+        requestOptions.isNetworkAccessAllowed = false
+        PHImageManager.default().requestImage(for: asset, targetSize: targetSize, contentMode: .aspectFill, options: requestOptions, resultHandler: {
+            (image, info) in
+            if image != nil, info != nil, let dict = info as? [String : Any] {
+                let cancel = dict[PHImageCancelledKey] as? Bool
+                let errorKey = dict[PHImageErrorKey] as? Bool
+                let degrade = dict[PHImageResultIsDegradedKey] as? Bool
+                if (cancel == nil || !cancel!) && (errorKey == nil || !errorKey!) && (degrade == nil || !degrade!) {
+                    completion(image!)
+                }
+            }
+        })
+    }
     
     
 }

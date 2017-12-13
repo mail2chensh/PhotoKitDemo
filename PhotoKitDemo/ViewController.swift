@@ -10,7 +10,7 @@ import UIKit
 import Photos
 
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, XPhotoPickerViewControllerDelegate {
     
     
     @IBOutlet weak var imageView: UIImageView!
@@ -77,11 +77,15 @@ class ViewController: UIViewController {
     
     @IBAction func buttonDidTouch(_ sender: Any) {
         
-        let photoPickerVC = XPhotoPickerViewController()
+        let photoPickerVC = XPhotoPickerViewController(maxCount: 9)
+        photoPickerVC.pickerDelegate = self
         self.present(photoPickerVC, animated: true, completion: nil)
         
     }
     
+    func photoPickerViewControllerDidFinished(images: [UIImage]) {
+        debugPrint("images: \(images.count)")
+    }
 
 }
 

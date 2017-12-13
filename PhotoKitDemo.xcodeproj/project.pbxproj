@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D70BD11C1FE0C77700147252 /* XPAlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70BD11A1FE0C77700147252 /* XPAlbumViewController.swift */; };
+		D70BD1201FE0D1DB00147252 /* XPAlbumCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70BD11E1FE0D1DB00147252 /* XPAlbumCollectionViewCell.swift */; };
+		D70BD1211FE0D1DB00147252 /* XPAlbumCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D70BD11F1FE0D1DB00147252 /* XPAlbumCollectionViewCell.xib */; };
+		D70BD1231FE0D55D00147252 /* XPhotoAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D70BD1221FE0D55D00147252 /* XPhotoAssets.xcassets */; };
+		D70BD1261FE12A1300147252 /* XPImagePreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70BD1241FE12A1300147252 /* XPImagePreviewController.swift */; };
+		D70BD1291FE1336400147252 /* XPImagePreviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70BD1281FE1336400147252 /* XPImagePreviewCollectionViewCell.swift */; };
 		D7F179C51FDF881900402EDD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F179C41FDF881900402EDD /* AppDelegate.swift */; };
 		D7F179C71FDF881900402EDD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F179C61FDF881900402EDD /* ViewController.swift */; };
 		D7F179CA1FDF881900402EDD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7F179C81FDF881900402EDD /* Main.storyboard */; };
@@ -20,6 +26,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D70BD11A1FE0C77700147252 /* XPAlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XPAlbumViewController.swift; sourceTree = "<group>"; };
+		D70BD11E1FE0D1DB00147252 /* XPAlbumCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XPAlbumCollectionViewCell.swift; sourceTree = "<group>"; };
+		D70BD11F1FE0D1DB00147252 /* XPAlbumCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XPAlbumCollectionViewCell.xib; sourceTree = "<group>"; };
+		D70BD1221FE0D55D00147252 /* XPhotoAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = XPhotoAssets.xcassets; sourceTree = "<group>"; };
+		D70BD1241FE12A1300147252 /* XPImagePreviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XPImagePreviewController.swift; sourceTree = "<group>"; };
+		D70BD1281FE1336400147252 /* XPImagePreviewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XPImagePreviewCollectionViewCell.swift; sourceTree = "<group>"; };
 		D7F179C11FDF881900402EDD /* PhotoKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7F179C41FDF881900402EDD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D7F179C61FDF881900402EDD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -68,6 +80,7 @@
 				D7F179C61FDF881900402EDD /* ViewController.swift */,
 				D7F179C81FDF881900402EDD /* Main.storyboard */,
 				D7F179CB1FDF881900402EDD /* Assets.xcassets */,
+				D70BD1221FE0D55D00147252 /* XPhotoAssets.xcassets */,
 				D7F179CD1FDF881900402EDD /* LaunchScreen.storyboard */,
 				D7F179D01FDF881900402EDD /* Info.plist */,
 				D7F179E01FDFCE1900402EDD /* XPhotoPickerManager.swift */,
@@ -75,6 +88,11 @@
 				D7F179D61FDFBA3200402EDD /* XPAlbumsListViewController.swift */,
 				D7F179E21FDFD96E00402EDD /* XPAlbumsTableViewCell.swift */,
 				D7F179E31FDFD96E00402EDD /* XPAlbumsTableViewCell.xib */,
+				D70BD11A1FE0C77700147252 /* XPAlbumViewController.swift */,
+				D70BD11E1FE0D1DB00147252 /* XPAlbumCollectionViewCell.swift */,
+				D70BD11F1FE0D1DB00147252 /* XPAlbumCollectionViewCell.xib */,
+				D70BD1241FE12A1300147252 /* XPImagePreviewController.swift */,
+				D70BD1281FE1336400147252 /* XPImagePreviewCollectionViewCell.swift */,
 			);
 			path = PhotoKitDemo;
 			sourceTree = "<group>";
@@ -138,9 +156,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D70BD1211FE0D1DB00147252 /* XPAlbumCollectionViewCell.xib in Resources */,
 				D7F179E51FDFD96E00402EDD /* XPAlbumsTableViewCell.xib in Resources */,
 				D7F179CF1FDF881900402EDD /* LaunchScreen.storyboard in Resources */,
 				D7F179CC1FDF881900402EDD /* Assets.xcassets in Resources */,
+				D70BD1231FE0D55D00147252 /* XPhotoAssets.xcassets in Resources */,
 				D7F179CA1FDF881900402EDD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -153,7 +173,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7F179C71FDF881900402EDD /* ViewController.swift in Sources */,
+				D70BD1291FE1336400147252 /* XPImagePreviewCollectionViewCell.swift in Sources */,
+				D70BD1261FE12A1300147252 /* XPImagePreviewController.swift in Sources */,
 				D7F179E41FDFD96E00402EDD /* XPAlbumsTableViewCell.swift in Sources */,
+				D70BD1201FE0D1DB00147252 /* XPAlbumCollectionViewCell.swift in Sources */,
+				D70BD11C1FE0C77700147252 /* XPAlbumViewController.swift in Sources */,
 				D7F179E11FDFCE1900402EDD /* XPhotoPickerManager.swift in Sources */,
 				D7F179DD1FDFC87F00402EDD /* XPhotoPickerViewController.swift in Sources */,
 				D7F179C51FDF881900402EDD /* AppDelegate.swift in Sources */,

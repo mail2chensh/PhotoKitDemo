@@ -14,6 +14,7 @@ class XPAlbumsListViewController: UIViewController, UITableViewDelegate, UITable
     
     
     var tableView: UITableView!
+    
 
     
     // =================================
@@ -24,6 +25,8 @@ class XPAlbumsListViewController: UIViewController, UITableViewDelegate, UITable
         super.viewDidLoad()
         //
         self.navigationItem.title = "相册"
+        //
+        self.addNavigationBarButton()
         //
         self.initTableView()
         //
@@ -94,9 +97,32 @@ class XPAlbumsListViewController: UIViewController, UITableViewDelegate, UITable
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        tableView.deselectRow(at: indexPath, animated: true)
+        //
+        XPhotoPickerManger.shared.currentSelectedIndex = indexPath.row
+        let albumVC = XPAlbumViewController()
+        self.navigationController?.pushViewController(albumVC, animated: true)
     }
 
+    
+    // =================================
+    // MARK:
+    // =================================
+    
+    func addNavigationBarButton() {
+        if self.navigationItem.leftBarButtonItem == nil {
+            let cancelButton: UIBarButtonItem = UIBarButtonItem.init(title: "取消", style: .plain, target: self, action: #selector(backButtonDidTouch(_:)))
+            self.navigationItem.leftBarButtonItem = cancelButton
+        }
+    }
+    
+    @objc func backButtonDidTouch(_ sender: Any) {
+        if let navController: XPhotoPickerViewController = self.navigationController as? XPhotoPickerViewController {
+            navController.pickerViewControllerDismiss()
+        }
+    }
+    
+    
     
 
 }

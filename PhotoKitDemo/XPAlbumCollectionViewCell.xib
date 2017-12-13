@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="XPAlbumCollectionViewCell" customModule="PhotoKitDemo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2ff-mQ-BDM">
+                        <rect key="frame" x="1" y="1" width="78" height="78"/>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ocy-Iv-BCd">
+                        <rect key="frame" x="44" y="1" width="35" height="35"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="35" id="5MR-HB-atg"/>
+                            <constraint firstAttribute="width" constant="35" id="i4w-zi-ngS"/>
+                        </constraints>
+                        <state key="normal" image="tick"/>
+                        <state key="selected" image="tick_selected"/>
+                        <connections>
+                            <action selector="buttonDidSelected:" destination="gTV-IL-0wX" eventType="touchUpInside" id="yn5-j1-uTk"/>
+                        </connections>
+                    </button>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="2ff-mQ-BDM" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="1" id="7Rb-Kg-cKa"/>
+                <constraint firstAttribute="trailing" secondItem="2ff-mQ-BDM" secondAttribute="trailing" constant="1" id="Dce-Pb-xDt"/>
+                <constraint firstItem="ocy-Iv-BCd" firstAttribute="trailing" secondItem="2ff-mQ-BDM" secondAttribute="trailing" id="GXJ-mN-Ftz"/>
+                <constraint firstItem="2ff-mQ-BDM" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="1" id="KMh-6P-EoA"/>
+                <constraint firstItem="ocy-Iv-BCd" firstAttribute="top" secondItem="2ff-mQ-BDM" secondAttribute="top" id="UGF-L7-YqG"/>
+                <constraint firstAttribute="bottom" secondItem="2ff-mQ-BDM" secondAttribute="bottom" constant="1" id="jQf-4a-SrM"/>
+            </constraints>
+            <size key="customSize" width="231" height="223"/>
+            <connections>
+                <outlet property="thumbnailImageView" destination="2ff-mQ-BDM" id="ixh-Me-ZXk"/>
+                <outlet property="tickButton" destination="ocy-Iv-BCd" id="hsu-Bk-JvD"/>
+            </connections>
+            <point key="canvasLocation" x="-156.5" y="-97.5"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="tick" width="24" height="24"/>
+        <image name="tick_selected" width="24" height="24"/>
+    </resources>
+</document>
